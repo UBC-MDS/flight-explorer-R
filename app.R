@@ -35,7 +35,7 @@ box_jitter_plot_radio_items <- dccRadioItems(
 
 return_fatality_barchart <- function(value = 1){
   
-  chart_2_data <- read_csv("chart_2_data.csv")
+  chart_2_data <- read_csv("https://github.com/UBC-MDS/flight-explorer-R/raw/master/chart_2_data.csv")
   chart_2_data$airline <- reorder(chart_2_data$airline,
                                   -chart_2_data$total_fatalities_per_b_avail_seat_km)
   
@@ -67,7 +67,7 @@ return_fatality_barchart <- function(value = 1){
 
 return_jitter_bar_fatality_chart <- function(value = "incident"){
   
-  chart_1_data <- read_csv("chart_1_data.csv")
+  chart_1_data <- read_csv("https://github.com/UBC-MDS/flight-explorer-R/raw/master/chart_1_data.csv")
   
   jitter_var_fatality_chart <- chart_1_data %>%
     ggplot(aes(x = fatalities_period,#reorder(fatalities_period, ~fatalities_value, FUN=median),
